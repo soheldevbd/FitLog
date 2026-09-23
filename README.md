@@ -5,7 +5,7 @@ A modern, responsive workout library and daily workout planner built with Next.j
 ## 🔗 Links
 
 - Live Link: Add your deployed Vercel/Netlify URL here
-- GitHub: https://github.com/soheldevbd
+- GitHub: <https://github.com/soheldevbd>
 
 ## ✨ Key Features
 
@@ -39,7 +39,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+Open <http://localhost:3000>
 
 ## 📡 API
 

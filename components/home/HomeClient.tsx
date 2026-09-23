@@ -7,7 +7,7 @@ import Banner from '@/public/banner.png';
 export default function HomeClient({ workouts }: { workouts: Workout[] }) {
   return (
     <>
-      <section className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-24">
+      <section className="mx-auto grid max-w-7xl items-center gap-15 px-5 py-16 border border-gray-800 bg-[#15171D] rounded-2xl mt-10 lg:grid-cols-[1.05fr_.95fr] lg:px-8 lg:py-24">
         <div>
           <p className="mb-5 text-xs font-black tracking-[.35em] text-[#ccff00]">
             WORKOUT LIBRARY
@@ -26,10 +26,12 @@ export default function HomeClient({ workouts }: { workouts: Workout[] }) {
             Browse workouts <ArrowRight size={17} />
           </a>
         </div>
-        <div >
+        <div>
           <Image
             src={Banner}
             alt="FitLog workout"
+            width={500}
+            height={500}
             className="object-cover bg-center bg-cover "
           />
         </div>
