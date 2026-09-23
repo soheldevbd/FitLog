@@ -3,7 +3,7 @@ import { ArrowDown, ArrowRight } from 'lucide-react';
 import WorkoutLibrary from './WorkoutLibrary';
 import { Workout } from '@/types/workout';
 import Image from 'next/image';
-
+import Banner from '@/public/banner.png';
 export default function HomeClient({ workouts }: { workouts: Workout[] }) {
   return (
     <>
@@ -26,19 +26,12 @@ export default function HomeClient({ workouts }: { workouts: Workout[] }) {
             Browse workouts <ArrowRight size={17} />
           </a>
         </div>
-        <div className="relative aspect-4/3 overflow-hidden rounded-4xl border border-white/10 bg-[#151914]">
+        <div >
           <Image
-            src={workouts[0]?.image || ''}
+            src={Banner}
             alt="FitLog workout"
-            fill
-            priority
-            className="object-cover"
+            className="object-cover bg-center bg-cover "
           />
-          <div className="absolute inset-0 bg-linear-to-tr from-black/60 via-transparent to-[#ccff00]/10" />
-          <div className="absolute bottom-5 left-5 flex items-center gap-2 rounded-full border border-white/20 bg-black/50 px-4 py-2 text-xs font-bold backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-[#ccff00]" /> TRAIN / LOG /
-            REPEAT
-          </div>
         </div>
       </section>
       <WorkoutLibrary workouts={workouts} />
