@@ -11,14 +11,15 @@ import {
   Plus,
   Star,
 } from 'lucide-react';
-import { toast } from 'sonner';
+
 import { Workout } from '@/types/workout';
 import { useFitLog } from '@/context/FitLogContext';
+import { toast } from 'react-toastify';
 
 export default function WorkoutDetails({ workout }: { workout: Workout }) {
   const { addToPlan, saveForLater, isInPlan, isSaved } = useFitLog();
   const add = () =>
-    toast(
+    toast.success(
       addToPlan(workout.id)
         ? "Added to today's plan"
         : workout.id && isInPlan(workout.id)
@@ -26,7 +27,7 @@ export default function WorkoutDetails({ workout }: { workout: Workout }) {
           : "Today's plan is full (5 lifts max)",
     );
   const save = () =>
-    toast(saveForLater(workout.id) ? 'Saved for later' : 'Already saved');
+    toast.success(saveForLater(workout.id) ? 'Saved for later' : 'Already saved');
   return (
     <main className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
       <Link

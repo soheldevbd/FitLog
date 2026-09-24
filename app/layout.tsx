@@ -3,7 +3,8 @@ import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { FitLogProvider } from '@/context/FitLogContext';
-import { Toaster } from 'sonner';
+import { ToastContainer } from 'react-toastify';
+
 
 export const metadata: Metadata = {
   title: 'FitLog — Workout Library',
@@ -20,7 +21,7 @@ export default function RootLayout({
           <Navbar />
           <div className="min-h-[calc(100vh-72px)]">{children}</div>
           <Footer />
-          <Toaster theme="dark" position="bottom-right" />
+          <ToastContainer position="top-center" />
         </FitLogProvider>
       </body>
     </html>

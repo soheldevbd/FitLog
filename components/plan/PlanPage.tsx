@@ -3,9 +3,10 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Check, Clock3, Flame, Star, X, ArrowRight } from 'lucide-react';
-import { toast } from 'sonner';
+
 import { Workout } from '@/types/workout';
 import { useFitLog } from '@/context/FitLogContext';
+import { toast } from 'react-toastify';
 
 export default function PlanPage({ workouts }: { workouts: Workout[] }) {
   const { plan, saved, done, removeFromPlan, removeSaved, markDone } =
@@ -142,7 +143,7 @@ export default function PlanPage({ workouts }: { workouts: Workout[] }) {
                       disabled={done.includes(w.id)}
                       onClick={() => {
                         markDone(w.id);
-                        toast('Workout marked as done');
+                        toast.success('Workout marked as done');
                       }}
                       className="flex items-center gap-1 rounded-full bg-[#ccff00] px-4 py-2 text-xs font-black uppercase text-black disabled:opacity-40"
                     >
@@ -152,7 +153,7 @@ export default function PlanPage({ workouts }: { workouts: Workout[] }) {
                     <button
                       onClick={() => {
                         removeFromPlan(w.id);
-                        toast("Removed from today's plan");
+                        toast.error("Removed from today's plan");
                       }}
                       className="rounded-full border border-red-400/30 p-2 text-red-300"
                       aria-label="Remove"
@@ -165,7 +166,7 @@ export default function PlanPage({ workouts }: { workouts: Workout[] }) {
                   <button
                     onClick={() => {
                       removeSaved(w.id);
-                      toast('Removed from saved');
+                      toast.success('Removed from saved');
                     }}
                     className="rounded-full border border-red-400/30 p-2 text-red-300"
                     aria-label="Remove"
