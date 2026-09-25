@@ -21,7 +21,7 @@ export default function RootLayout({
           <Navbar />
           <div className="min-h-[calc(100vh-72px)]">{children}</div>
           <Footer />
-          <ToastContainer position="top-center" />
+          <ToastContainer position="top-right" />
         </FitLogProvider>
       </body>
     </html>
